@@ -1,12 +1,8 @@
 import React from "react"
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 export const AboutUs = () => {
-  return (
-    <div>
-      This is about us page <Footer />
-    </div>
-  )
+  return <Layout>This is about us page</Layout>
 }
 
 export default AboutUs

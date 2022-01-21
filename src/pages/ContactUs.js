@@ -1,12 +1,7 @@
 import React from "react"
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 export const ContactUs = () => {
-  return (
-    <div>
-      This is a contact us page
-      <Footer />
-    </div>
-  )
+  return <Layout>This is a contact us page</Layout>
 }
 
 export default ContactUs
