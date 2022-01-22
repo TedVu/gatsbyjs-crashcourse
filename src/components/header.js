@@ -5,8 +5,12 @@ import { Link } from "gatsby"
 import * as headerStyles from "./header.module.scss"
 const Header = () => {
   return (
-    <header>
-      <h1>Ted Vu</h1>
+    <header className={headerStyles.header}>
+      <h1>
+        <Link className={headerStyles.title} to="/">
+          Ted Vu
+        </Link>
+      </h1>
       <nav>
         <ul>
           <li>
