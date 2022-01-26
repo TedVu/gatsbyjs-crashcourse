@@ -1,9 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
-// import "./header.module.scss"
+import { Link, graphql, useStaticQuery } from "gatsby" // useStaticQuery is a hooks
 
 import * as headerStyles from "./header.module.scss"
 const Header = () => {
+  // Tag template literal syntax
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
   return (
     <header className={headerStyles.header}>
       <h1>
@@ -12,20 +21,43 @@ const Header = () => {
         </Link>
       </h1>
       <nav>
-        <ul>
+        {/* In SCSS .nav-list in js it is navList */}
+        <ul className={headerStyles.navList}>
           <li>
-            <Link className={headerStyles.link} to="/">
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/blog"
+            >
+              Blog
+            </Link>
           </li>
           <li>
-            <Link to="/aboutus">About Us</Link>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/aboutus"
+            >
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/contactus">Contact</Link>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/contactus"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
